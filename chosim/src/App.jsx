@@ -1,38 +1,23 @@
 // import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SignUp from './components/SignUp';
+import Home from './components/Home';
+import SignIn from './components/Login';
+import Community from './components/Community';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Chosim</h1>
-        <nav>
-          <ul>
-            <li><a href="#home">myPage</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <section id="home">
-          <h2>myPage</h2>
-          <p>This is the home section of the homepage.</p>
-        </section>
-        <section id="about">
-          <h2>About</h2>
-          <p>This is the about section of the homepage.</p>
-        </section>
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>This is the contact section of the homepage.</p>
-        </section>
-      </main>
-      <footer>
-        <p>&copy; 2024 My Homepage</p>
-      </footer>
-    </div>
-  );
+    return (
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/Community" element={<Community />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
